@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+
+    <h1>Complete Your Payment</h1>
+    <p>Product: {{ product }}</p>
+
+    <form id="payment-form">
+        <div id="card-element"></div>
+        <button id="submit">Pay Now</button>
+        <p id="error-message"></p>
+    </form>
+
+    <script>
+        var stripe = Stripe('{{ key }}');
+        var elements = stripe.elements();
+        var card = elements.create('card');
+        card.mount('#card-element');
+
+        var form = document.getElementById('payment-form');
+        var errorMessage = document.getElementById('error-message');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            stripe.confirmCardPayment("{{ secret }}", {
+                payment_method: {
+                    card: card
+                }
+            }).then(function(result) {
+                if (result.error) {
+                    errorMessage.textContent = result.error.message;
+                } else {
+                    window.location.href = "/success";
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
