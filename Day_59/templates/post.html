@@ -1,0 +1,13 @@
+{% include "header.html" %}
+<header class="py-5 bg-light">
+    <div class="container">
+        <h1 class="text-center">{{ post.title }}</h1>
+        <p class="text-center">{{ post.subtitle }}</p>
+    </div>
+</header>
+<div class="container mt-4">
+    <img src="{{ post.image }}" class="img-fluid" alt="Post Image">
+    <p class="mt-4">{{ post.body }}</p>
+    <a href="/" class="btn btn-secondary mt-3">Back to Home</a>
+</div>
+{% include "footer.html" %}
