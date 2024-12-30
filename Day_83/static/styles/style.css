@@ -1,0 +1,68 @@
+/* Basic styles for the portfolio site */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    padding: 1rem;
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 2rem;
+    max-width: 1000px;
+    margin: auto;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+}
+
+.hero {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.projects {
+    margin-top: 30px;
+}
+
+.project-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.project-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 45%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-item h2 {
+    margin-top: 0;
+}
